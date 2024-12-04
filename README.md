@@ -13,7 +13,7 @@ poetry install
 poetry run python dump_history.py
 ```
 
-## Code format
+## コードフォーマット
 
 ```shell
 poetry run ruff check --fix
