@@ -6,7 +6,18 @@ Linux版Chromeの履歴データを月を指定してダンプするスクリプ
 - Poetry 1.8
 
 ```shell
+poetry install
+
 ./copy_history.sh
 
 poetry run python dump_history.py
+```
+
+## Code format
+
+```shell
+poetry run ruff check --fix
+poetry run ruff format
+
+poetry run mypy .
 ```
