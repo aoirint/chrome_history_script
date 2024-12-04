@@ -1,6 +1,6 @@
 # Chrome History Script
 
-Linux版Chromeの履歴データを月を指定してダンプするスクリプト。
+Linux版Chromeの閲覧履歴データを月を指定してTSVダンプするスクリプト。
 
 - Python 3.12
 - Poetry 1.8
