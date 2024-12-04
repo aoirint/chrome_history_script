@@ -2,15 +2,16 @@ import logging
 import re
 import sqlite3
 from argparse import ArgumentParser
-from datetime import datetime, timezone
+from datetime import UTC, datetime
+from pathlib import Path
 from typing import NamedTuple
 from zoneinfo import ZoneInfo
-from pathlib import Path
 
 from pydantic import TypeAdapter
 
 JST = ZoneInfo(key="Asia/Tokyo")
 logger = logging.getLogger(__name__)
+
 
 class HistoryItem(NamedTuple):
     urls_url: str
@@ -75,7 +76,7 @@ def main() -> None:
     logger.info(f"Start time: {first_day_of_month.isoformat()}")
     logger.info(f"End time: {first_day_of_next_month.isoformat()}")
 
-    chrome_zero_datetime = datetime(1601, 1, 1, tzinfo=timezone.utc)
+    chrome_zero_datetime = datetime(1601, 1, 1, tzinfo=UTC)
 
     start_visit_time = int(
         (first_day_of_month.timestamp() - chrome_zero_datetime.timestamp()) * 10**6
